@@ -20,3 +20,11 @@ Route::get('/', function () {
 Route::get('/login', function () {
     return "<h1>Inicio de sesión exitoso <hr></h1>";
 });
+
+Route::get('/empresario_1', function () {
+    return view('tienda_emprendedor');
+})->name('tienda_emprendedor');
+
+Route::get('/empresario_1/producto_de_prueba', function () {
+    return view('vista_producto');
+});

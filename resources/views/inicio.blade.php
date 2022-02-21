@@ -22,10 +22,20 @@
         transform: scale(1.2);
     }
 </style>
+<script>
+    window.onload = function () {
+        let images = document.getElementsByTagName('img');
+        for (let i = 0; i < images.length; i++) {
+            images[i].onclick = function (){
+                window.location.href = "{{route('tienda_emprendedor')}}";
+            };
+        }
+    };
+</script>
 <body>
 
 <!-- Sidebar (hidden by default) -->
-<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left"cd
+<nav class="w3-sidebar w3-bar-block w3-card w3-top w3-xlarge w3-animate-left" cd
      style="display:none;z-index:2;width:40%;min-width:300px" id="mySidebar">
     <a href="javascript:void(0)" onclick="w3_close()"
        class="w3-bar-item w3-button">Cerrar Menú</a>
@@ -38,7 +48,8 @@
     <div class="w3-white w3-xlarge" style="max-width:1200px;margin:auto">
         <div class="w3-button w3-padding-16 w3-left" onclick="w3_open()">☰</div>
         <div class="w3-right w3-padding-16"><h6><a href="login">Iniciar sesión</a></h6></div>
-        <div class="w3-right w3-padding-16"><h6><a href="login">Instagram</a></h6></div>
+        <div class="w3-right w3-padding-16"><h6><a href="https://www.instagram.com/emprendean/">Instagram&nbsp;&nbsp;&nbsp;</a>
+            </h6></div>
         <a href="javascript:void(0)" class="fa fa-instagram"></a>
         <div class="w3-center w3-padding-16">EmprendEan</div>
     </div>
@@ -47,7 +58,11 @@
 <!-- !PAGE CONTENT! -->
 <div id="page" class="w3-main w3-content w3-padding" style="max-width:120   0px;margin-top:100px">
 
-    <video src="http://emprendean.ddns.net/storage/app/public/Video - tercer entregable.mp4" width="640" height="480"></video>
+    <video width="100%" controls>
+        <source src="{{asset('/storage/Video - tercer entregable(1).mp4')}}" type="video/mp4">
+
+        Your browser does not support HTML video.
+    </video>
     <!-- First Photo Grid-->
     <div class="w3-row-padding w3-padding-16 w3-center" id="food">
         <div class="w3-quarter">
